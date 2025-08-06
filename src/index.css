@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-darkBg text-white;
+    font-family: 'Orbitron', monospace;
+  }
+}
+
+@layer components {
+  .neon-glow {
+    @apply shadow-[0_0_10px_theme(colors.neonRed),0_0_20px_theme(colors.neonRed),0_0_30px_theme(colors.neonRed)];
+  }
+  
+  .neon-glow-blue {
+    @apply shadow-[0_0_10px_theme(colors.neonBlue),0_0_20px_theme(colors.neonBlue),0_0_30px_theme(colors.neonBlue)];
+  }
+  
+  .glass-card {
+    @apply bg-black/30 backdrop-blur-md border border-white/10 rounded-xl p-6;
+  }
+  
+  .racing-button {
+    @apply bg-gradient-to-r from-neonRed to-neonBlue text-white font-bold py-3 px-6 rounded-full 
+           hover:from-neonBlue hover:to-neonRed transition-all duration-300 transform hover:scale-105
+           shadow-lg hover:shadow-[0_0_20px_rgba(255,7,58,0.5)];
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-neonRed to-neonBlue bg-clip-text text-transparent;
+  }
+}
